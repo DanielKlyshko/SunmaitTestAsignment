@@ -95,6 +95,10 @@ struct NewsView: View {
                                     .onTapGesture {
                                         if let url = URL(string: article.webUrl) {
                                             selectedURL = url
+                                        }
+                                    }
+                                    .onChange(of: selectedURL) { newValue in
+                                        if newValue != nil {
                                             isShowingSafari = true
                                         }
                                     }
